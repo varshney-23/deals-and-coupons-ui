@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.landing-container{
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+
+h1{
+    color: rgb(115, 3, 3);
+    margin-top: 50px;
+    font-size: 10vh;
+    font-family: 'Comic neue'
+}
+
+
+:host{
+    display: block;
+    min-height: 100vh;
+    position: relative;
+    background-image: url('../../../public/shopping.webp');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 700px;
+}
+
+.hookline{
+    margin-top: 70px;
+    font-size: 3vh;
+    width: 50vw;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button{
+    margin-top: 100px;
+    margin-left: 380px;
+    padding: 15px 30px;
+    font-size: 18px;
+    width: 250px;
+    height: 80px;
+    border-radius: 40px;
+}

@@ -1,0 +1,44 @@
+.landing-container {
+    position: relative;
+    height: 100vh;
+    background-color: #f9efea;
+    padding: 2rem;
+    text-align: left;
+
+    .logo {
+        font-size: 48px;
+        color: maroon;
+        font-weight: bold;
+    }
+
+    .hook {
+        margin-top: 1rem;
+        font-size: 20px;
+        color: #444;
+    }
+
+    button {
+        margin-top: 2rem;
+    }
+
+    .coupon-gallery {
+        position: absolute;
+        top: 30%;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .coupon-img {
+            width: 150px;
+            border-radius: 12px;
+        }
+    }
+
+    .bottom-left-img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+    }
+}
