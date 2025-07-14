@@ -1,8 +1,15 @@
-<div class="landing-container">
-    <h1>GrabinGO</h1>
-    <p class="hookline">Shopping just got smarter.<br>
-    Instant deals, real savings - anytime, anywhere with GrabinGO.<br>
-    No more coupon hunting - we bring the best deals right to you.<br>
-    Because saving smart is the new shopping style.</p>
-    <button mat-raised-button color="warn" (click)="openAuthDialog()">GET STARTED</button>
+<div class="landing-root">
+  <div class="landing-left">
+    <h1 class="brand">GrabinGO</h1>
+    <h2 class="heading">Shopping just got smarter.</h2>
+    <p class="hookline">
+      Instant deals, real savings - anytime, anywhere with GrabinGO.<br>
+      No more coupon hunting - we bring the best deals right to you.<br>
+      Because saving smart is the new shopping style.
+    </p>
+    <button mat-raised-button color="primary" class="get-started-btn" (click)="openAuthDialog()">GET STARTED</button>
+  </div>
+  <div class="landing-right">
+    <img src="assets/shopping.webp" alt="Coupon Layout" class="coupon-img" />
+  </div>
 </div>

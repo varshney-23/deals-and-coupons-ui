@@ -1,0 +1,19 @@
+/* Copy your styles from the old file here or leave empty for now */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error-msg {
+  color: red;
+  margin-bottom: 12px;
+}
+
+.forgot-link {
+  margin-top: 12px;
+  text-align: right;
+}

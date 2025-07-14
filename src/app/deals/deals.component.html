@@ -1,0 +1,11 @@
+<p>deals works!</p>
+<div class="deals-container">
+  <h2 class="deals-title">Top Brands</h2>
+  <div class="deals-grid">
+    <div class="brand-card" *ngFor="let brand of brands">
+      <img [src]="brand.brandLogo" [alt]="brand.brandName" class="brand-logo" />
+      <h3>{{ brand.brandName }}</h3>
+      <button mat-stroked-button color="primary" class="view-deals-btn">View Deals</button>
+    </div>
+  </div>
+</div>

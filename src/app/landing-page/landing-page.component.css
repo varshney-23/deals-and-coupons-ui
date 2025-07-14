@@ -21,25 +21,76 @@ h1{
     display: block;
     min-height: 100vh;
     position: relative;
-    background-image: url('../../../public/shopping.webp');
+    background-image: url('../../../public/assets/shopping.webp');
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 700px;
 }
 
-.hookline{
-    margin-top: 70px;
-    font-size: 3vh;
-    width: 50vw;
-    font-family: 'Times New Roman', Times, serif;
+.landing-root {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f9efea 60%, #f7f6f2 100%);
+  align-items: center;
+  justify-content: center;
 }
 
-button{
-    margin-top: 100px;
-    margin-left: 380px;
-    padding: 15px 30px;
-    font-size: 18px;
-    width: 250px;
-    height: 80px;
-    border-radius: 40px;
+.landing-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4vw 3vw 4vw 7vw;
+}
+
+.brand {
+  color: #a0522d;
+  font-size: 4vw;
+  font-family: 'Comic Neue', cursive, sans-serif;
+  margin-bottom: 1vw;
+}
+
+.heading {
+  font-size: 2vw;
+  color: #333;
+  margin-bottom: 1vw;
+}
+
+.hookline {
+  font-size: 1.2vw;
+  color: #555;
+  margin-bottom: 2vw;
+  max-width: 32vw;
+}
+
+.get-started-btn {
+  font-size: 1.1vw;
+  padding: 1vw 2vw;
+  border-radius: 2vw;
+  box-shadow: 0 2px 8px #e0cfc2;
+  background: linear-gradient(90deg, #ffe5b4 60%, #fff7e6 100%);
+  color: #a0522d;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+.get-started-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #fff7e6 60%, #ffe5b4 100%);
+}
+
+.landing-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw 7vw 4vw 3vw;
+}
+
+.coupon-img {
+  max-width: 32vw;
+  max-height: 60vh;
+  border-radius: 2vw;
+  box-shadow: 0 4px 24px #e0cfc2;
+  background: #fff7e6;
 }
