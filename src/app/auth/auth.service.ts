@@ -17,6 +17,12 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/auth/register`, signupPayload);
   }
 
+// getting all brands 
+  // getAllBrands(): Observable<any> {
+  //   return this.http.get(`${this.baseUrl}/inventory/brands`);
+  // }
+
+
 //   getProfile(): Observable<any> {
 //     return this.http.get(`${this.baseUrl}/auth/profile`);
 //   }
