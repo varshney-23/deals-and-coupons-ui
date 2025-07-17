@@ -1,0 +1,43 @@
+<div class="brand-header">
+    <span class="brand-title">Deals for {{ brandName | titlecase }}</span>
+
+    <span class="header-actions">
+
+        <button mat-icon-button color="accent" (click)="goToPurchaseHistory()" aria-label="Purchase History">
+            <mat-icon>receipt_long</mat-icon>
+        </button>
+
+        <button mat-icon-button color="primary" class="cart-btn" (click)="goToMyCart()" aria-label="Go to My Cart">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+
+        <button mat-button color="warn" class="logout-btn" (click)="logout()" aria-label="Logout">
+            Logout
+        </button>
+    </span>
+</div>
+
+<div *ngIf="coupons.length > 0" class="coupon-wrapper">
+    <div *ngFor="let coupon of coupons" class="coupon-card">
+        <div class="coupon-inner">
+            <div class="gold-corner"></div>
+            <img [src]="coupon.brandLogo" alt="Logo" class="coupon-logo" />
+            <div class="coupon-content">
+                <h2>{{ coupon.brandName }}</h2>
+                <p class="category">{{ coupon.category }}</p>
+                <p class="details">{{ coupon.offerDetails }}</p>
+                <div class="price-box">
+                    <span *ngIf="coupon.couponType === 'paid'">${{ coupon.price }}</span>
+                    <button *ngIf="coupon.couponType === 'promotional'" (click)="bookPromotional(coupon.couponId)">GET
+                        COUPON</button>
+                </div>
+                <p class="expiry">Valid until: {{ coupon.expiryTime | date: 'MMMM yyyy, h:mm a' }}</p>
+                <span class="tag">{{ coupon.couponType | uppercase }} COUPON</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!coupons.length" class="no-coupon">
+    <p>No coupons found for {{ brandName | titlecase }}.</p>
+</div>

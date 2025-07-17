@@ -1,31 +1,22 @@
-<!-- 
+<div class="brand-header">
+  <span class="brand-title">Grabingo!</span>
 
-<p class="brand-header">
-  Grabingo!
-  <button mat-icon-button color="primary" class="cart-btn" (click)="goToMyCoupons()" aria-label="Go to My Coupons">
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
-</p>
-<div class="deals-container">
-  <h2 class="deals-title">Top Brands</h2>
-  <div class="deals-grid">
-    <div class="brand-card" *ngFor="let brand of brands">
-      <img [src]="brand.brandLogo" [alt]="brand.brandName" class="brand-logo" />
-      <h3>{{ brand.brandName }}</h3>
-      <button mat-stroked-button color="primary" class="view-deals-btn" (click)="viewDeals(brand)">
-        View Deals
-      </button>
-    </div>
-  </div>
-</div> -->
+  <span class="header-actions">
 
+    <button mat-icon-button color="accent" (click)="goToPurchaseHistory()" aria-label="Purchase History">
+      <mat-icon>receipt_long</mat-icon>
+    </button>
 
-<p class="brand-header">
-  Grabingo!
-  <button mat-icon-button color="primary" class="cart-btn" (click)="goToMyCoupons()" aria-label="Go to My Coupons">
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
-</p>
+    <button mat-icon-button color="primary" class="cart-btn" (click)="goToMyCart()" aria-label="Go to My Cart">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <button mat-button color="warn" class="logout-btn" (click)="logout()" aria-label="Logout">
+      Logout
+    </button>
+  </span>
+</div>
+
 
 <div class="deals-container">
   <h2 class="deals-title">Top Brands</h2>

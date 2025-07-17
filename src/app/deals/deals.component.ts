@@ -24,16 +24,25 @@ export class DealsComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-    this.http.get<Brand[]>('http://localhost:8081/inventory/brands').subscribe(data => {
+    this.http.get<Brand[]>('http://localhost:8765/inventory/brands').subscribe(data => {
       this.brands = data;
     });
   }
 
   viewDeals(brand: Brand) {
-    this.router.navigate(['/allusercoupons', brand.brandName]);
+    this.router.navigate(['/user-portal', brand.brandName]);
   }
 
-  goToMyCoupons() {
-    this.router.navigate(['/allusercoupons', 'default']); // optional fallback
+  goToMyCart() {
+    this.router.navigate(['/cart']);
+  }
+
+  goToPurchaseHistory() {
+    this.router.navigate(['/user-portal']);
+  }
+
+  logout() {
+    localStorage.removeItem('authToken');
+    this.router.navigate(['/']);
   }
 }
