@@ -38,7 +38,7 @@ export class DealsComponent implements OnInit {
   }
 
   goToPurchaseHistory() {
-    this.router.navigate(['/user-portal']);
+    this.router.navigate(['/previous-purchases']);
   }
 
   logout() {

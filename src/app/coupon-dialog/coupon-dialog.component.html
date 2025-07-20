@@ -1,0 +1,19 @@
+<div class="popup-container">
+    <div mat-dialog-content>
+        <ng-container *ngIf="data.error; else successBlock">
+            <p style="color: red; font-weight: bold;"> {{ data.error }}</p>
+        </ng-container>
+
+        <ng-template #successBlock>
+            <h2>🎉 Yayyy!!</h2>
+            <p>Your code is:</p>
+            <h3 class="code">{{ data.couponCode }}</h3>
+
+            <button (click)="copyCode()" class="copy-btn"><h3>Copy</h3></button>
+        </ng-template>
+    </div>
+
+    <div mat-dialog-actions class="dialog-footer">
+        <button mat-button (click)="closeDialog()">OK</button>
+    </div>
+</div>

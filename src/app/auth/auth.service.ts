@@ -31,4 +31,27 @@ export class AuthService {
   isLoggedIn(): boolean {
     return !!this.getToken();
   }
+
+  getUserInfo(): any {
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      const payload = token.split('.')[1];
+      const decoded = atob(payload);
+      return JSON.parse(decoded);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  getUserEmail(): string {
+    const userInfo = this.getUserInfo();
+    return userInfo?.sub || ''; // JWT's 'sub' is usually email
+  }
+
+  getUserName(): string {
+    const userInfo = this.getUserInfo();
+    return userInfo?.name || 'User'; // if name is stored
+  }
 }
