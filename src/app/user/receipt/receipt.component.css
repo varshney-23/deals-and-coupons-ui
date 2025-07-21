@@ -1,0 +1,93 @@
+.receipt-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #fdf3e7;
+    border: 1px solid #e0cfc0;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s;
+    width: 100%;
+    max-width: 650px;
+    gap: 20px;
+}
+
+.receipt-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.receipt-container.promo {
+    background-color: #e6fff3;
+    border-color: #a6e7ce;
+}
+
+.receipt-container.paid {
+    background-color: #fef4e9;
+    border-color: #e4d0b6;
+}
+
+.brand-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: contain;
+    background-color: white;
+    padding: 6px;
+    border: 1px solid #e5dacd;
+}
+
+.receipt-details {
+    flex: 1;
+}
+
+.receipt-details p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.category {
+    font-weight: 600;
+    color: #5c3d25;
+}
+
+.coupon,
+.price {
+    color: #e07c00;
+    font-weight: 500;
+}
+
+.qty,
+.offer,
+.time {
+    color: #555;
+    font-size: 14px;
+}
+
+.brand-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.brand-title {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logout-btn {
+    font-weight: 500;
+    text-transform: capitalize;
+}

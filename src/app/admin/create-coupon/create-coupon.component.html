@@ -1,0 +1,22 @@
+<h2>Create Coupon</h2>
+
+<div class="type-switcher">
+    <button [class.selected]="couponType === 'promotional'" (click)="onTypeChange('promotional')">Promotional</button>
+    <button [class.selected]="couponType === 'paid'" (click)="onTypeChange('paid')">Paid</button>
+</div>
+
+<form [formGroup]= "couponForm" (ngSubmit)="submit()">
+    <input placeholder="Brand Name" formControlName="brandName" />
+    <input placeholder="Brand Logo URL" formControlName="brandLogo" />
+    <input placeholder="Category" formControlName="category" />
+    <input placeholder="Offer Details" formControlName="offerDetails" />
+    <input type="datetime-local" placeholder="Expiry Time" formControlName="expiryTime" />
+
+    <!-- Only show if paid -->
+    <div *ngIf="couponType === 'paid'">
+        <input type="number" placeholder="Quantity" formControlName="quantity" />
+        <input type="number" placeholder="Price" formControlName="price" />
+    </div>
+
+    <button type="submit" [disabled]="couponForm.invalid">Create Coupon</button>
+</form>

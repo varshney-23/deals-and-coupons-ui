@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { DealsComponent } from './deals/deals.component';
+import { DealsComponent } from './user/deals/deals.component';
 
 @Component({
   selector: 'app-root',

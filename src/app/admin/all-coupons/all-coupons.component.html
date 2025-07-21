@@ -1,0 +1,21 @@
+<div class="all-receipts">
+    <div class="receipt-container" *ngFor="let booking of coupons" [ngClass]="booking.couponType === 'paid' ? 'paid' : 'promo'">
+        <img class="brand-logo" [src]="booking.brandLogo" alt="Brand Logo" />
+    
+        <div class="receipt-details">
+            <p class="category"><strong>Category:</strong> {{ booking.couponType.toUpperCase() }}</p>
+
+            <ng-container *ngIf="booking.couponType === 'promotional'; else paidTemplate">
+                <p class="offer">📌 <strong>Offer:</strong> {{ booking.offerDetails || 'N/A' }}</p>
+            </ng-container>
+    
+            <ng-template #paidTemplate>
+                <p class="price">💳 <strong>Price:</strong> ₹{{ booking.price }}</p>
+                <p class="qty">🧾 <strong>Quantity:</strong> {{ booking.quantity }}</p>
+                <p class="offer">📌 <strong>Offer:</strong> {{ booking.offerDetails || 'N/A' }}</p>
+            </ng-template>
+    
+            <p class="time">⏰ <strong>Expiry Time:</strong> {{ booking.expiryTime }}</p>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common'; // ✅ Import this
 import { Component, OnInit } from '@angular/core';
-import { BookingService } from '../services/booking.service';
+import { BookingService } from '../../services/booking.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';

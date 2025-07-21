@@ -5,7 +5,7 @@ import { NgIf, NgFor, TitleCasePipe, DatePipe, UpperCasePipe } from '@angular/co
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
-import { CartService } from '../services/cart.service'; // Import your CartService
+import { CartService } from '../../services/cart.service'; // Import your CartService
 import { FormsModule } from '@angular/forms';
 import { CouponDialogComponent } from '../coupon-dialog/coupon-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,8 +13,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-user-portal',
   standalone: true,
-  templateUrl: './user-portal.component.html',
-  styleUrls: ['./user-portal.component.css'],
+  templateUrl: './coupons-by-brands.component.html',
+  styleUrls: ['./coupons-by-brands.component.css'],
   imports: [
     NgFor, MatButtonModule, MatIconModule, RouterModule, FormsModule,
     NgIf,
@@ -25,7 +25,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     RouterModule // ✅ THIS LINE IS MANDATORY for ActivatedRoute to work
   ]
 })
-export class UserPortalComponent implements OnInit {
+export class CouponsByBrandsComponent implements OnInit {
   brandName = '';
   coupons: any[] = [];
 
@@ -93,21 +93,6 @@ export class UserPortalComponent implements OnInit {
       }
     });
 }
-
-
-//   bookPaid(couponId: number, quantity: number) {
-//   const token = localStorage.getItem('token');
-//   const userId = localStorage.getItem('userId');  // 👈 get userId from local storage
-
-//   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-//   const request = { couponId, userId, quantity };
-
-//   this.http.post(`http://localhost:8765/inventory/booking/paid`, request, { headers })
-//     .subscribe({
-//       next: res => alert("✅ Paid coupon booked!"),
-//       error: err => alert("❌ " + err.error.message)
-//     });
-// }
 
   increaseQty(coupon: any) {
   coupon.quantityToAdd = (coupon.quantityToAdd || 1) + 1;

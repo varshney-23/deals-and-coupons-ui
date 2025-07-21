@@ -30,7 +30,7 @@ export class DealsComponent implements OnInit {
   }
 
   viewDeals(brand: Brand) {
-    this.router.navigate(['/user-portal', brand.brandName]);
+    this.router.navigate(['/coupons-by-brands', brand.brandName]);
   }
 
   goToMyCart() {

@@ -62,9 +62,18 @@ export class AuthDialogComponent {
     if (this.loginForm.valid) {
       this.loading = true;
       this.authService.login(this.loginForm.value).subscribe({
-        next: () => {
+        next: (token) => {
+          localStorage.setItem('authToken', token); // ensure it's set
+
+          const role = this.authService.getUserRole();
+          console.log(role);
+
           this.dialogRef.close();
-          this.router.navigate(['/deals']);
+          if (role === 'ROLE_ADMIN') {
+            this.router.navigate(['/admin-portal']);
+          } else {
+            this.router.navigate(['/deals']);
+          }
         },
         error: () => {
           this.errorMsg = 'Invalid credentials';
@@ -73,7 +82,7 @@ export class AuthDialogComponent {
       });
     }
   }
-  //Test2@12345
+
 
   onSignup() {
   if (this.signupForm.valid && this.signupForm.value.password === this.signupForm.value.confirmPassword) {

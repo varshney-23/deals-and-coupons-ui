@@ -1,35 +1,3 @@
-<!-- 
-<div *ngIf="coupons.length > 0" class="coupon-wrapper">
-    <div *ngFor="let coupon of coupons" class="coupon-card">
-        <div class="coupon-inner">
-            <div class="gold-corner"></div>
-            <div class="coupon-content">
-                <h2>{{ coupon.brandName }}</h2>
-                <p class="category">{{ coupon.category }}</p>
-                <p class="details">{{ coupon.offerDetails }}</p>
-                <div class="price-box" *ngIf="coupon.couponType === 'paid'">
-                    <span>${{ coupon.price }}</span>
-                    <div class="counter">
-                        <button (click)="decreaseQty(coupon)">-</button>
-                        <input type="number" [(ngModel)]="coupon.quantityToAdd" min="1" />
-                        <button (click)="increaseQty(coupon)">+</button>
-                    </div>
-                    <button class="add-cart-btn" (click)="addToCart(coupon)">Add to Cart</button>
-                </div>
-                
-                <button *ngIf="coupon.couponType === 'promotional'" (click)="bookPromotional(coupon.couponId)">GET COUPON</button>
-
-                <p class="expiry">Valid until: {{ coupon.expiryTime | date: 'MMMM yyyy, h:mm a' }}</p>
-                <span class="tag">{{ coupon.couponType | uppercase }} COUPON</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div *ngIf="!coupons.length" class="no-coupon">
-    <p>No coupons found for {{ brandName | titlecase }}.</p>
-</div> -->
-
 <div class="brand-header">
     <span class="brand-title">Deals for {{ brandName | titlecase }}</span>
 

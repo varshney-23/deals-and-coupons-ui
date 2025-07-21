@@ -21,8 +21,8 @@ export class BookingService {
 
     getAllBookings(): Observable<any[]> {
         return forkJoin([
-        this.getPaidBookings(),
-        this.getPromoBookings()
+            this.getPaidBookings(),
+            this.getPromoBookings()
         ]);
     }
 }

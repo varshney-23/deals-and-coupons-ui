@@ -1,0 +1,21 @@
+<div class="brand-header">
+    <span class="brand-title">admin-portal</span>
+
+        <button mat-button color="warn" class="logout-btn" (click)="logout()" aria-label="Logout">
+            Logout
+        </button>
+</div>
+
+
+<div class="admin-portal">
+    <button class="admin-btn" (click)="getAllCoupons()">Get All Coupons</button>
+    <button class="admin-btn" (click)="getCouponsByBrand()">Get All Coupons By Brands</button>
+    <button class="admin-btn" (click)="getAllBookedCoupons()">Get all Booked Coupons</button>
+    <button class="admin-btn" (click)="getCouponsByCategory()">Get All Coupons By Category</button>
+
+    <button class="admin-btn" (click)="createCoupon()">Create Coupon</button>
+    <button class="admin-btn" (click)="updateCoupon()">Update Coupon</button>
+    <button class="admin-btn" (click)="deleteCoupon()">Delete Coupon</button>
+    <button class="admin-btn" (click)="deleteExpiredCoupons()">Delete all expired Coupons</button>
+
+</div>

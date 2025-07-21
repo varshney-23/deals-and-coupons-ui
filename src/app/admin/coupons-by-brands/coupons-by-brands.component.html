@@ -1,0 +1,48 @@
+<div class="brand-header">
+    <span class="brand-title">admin-portal</span>
+
+    <button mat-button color="warn" class="logout-btn" (click)="logout()" aria-label="Logout">
+        Logout
+    </button>
+</div>
+
+
+<div *ngIf="coupons.length > 0" class="coupon-wrapper">
+    <div *ngFor="let coupon of coupons" class="coupon-ticket">
+        <!-- LEFT SIDE -->
+        <div class="ticket-left">
+            <div class="brand-header">
+                <img [src]="coupon.brandLogo" alt="logo" class="brand-logo" />
+                <span class="brand-name">{{ coupon.brandName }}</span>
+            </div>
+
+            <h2 class="category">{{ coupon.category }}</h2>
+
+            <!-- Conditional for PAID -->
+            <ng-container *ngIf="coupon.couponType === 'paid'">
+                <div class="price-tag">
+                    ₹{{ coupon.price }}
+                </div>
+            
+            </ng-container>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="ticket-right">
+            <div class="offer-box">
+                <p class="offer-title">OFFER DETAILS</p>
+                <p class="offer-details">{{ coupon.offerDetails }}</p>
+            </div>
+
+            <p class="expiry">
+                Valid Until: {{ coupon.expiryTime | date: 'MMMM d, y, h:mm a' }}
+            </p>
+
+            <p class="coupon-type-label">{{ coupon.couponType | uppercase }} Coupon</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!coupons.length" class="no-coupon">
+    <p>No coupons found for {{ brandName | titlecase }}.</p>
+</div>

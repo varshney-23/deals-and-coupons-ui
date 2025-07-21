@@ -54,4 +54,10 @@ export class AuthService {
     const userInfo = this.getUserInfo();
     return userInfo?.name || 'User'; // if name is stored
   }
+
+  getUserRole(): string {
+    const userInfo = this.getUserInfo();
+    return userInfo?.role || 'USER';  // default USER
+  }
+
 }

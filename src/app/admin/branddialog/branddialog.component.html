@@ -1,0 +1,8 @@
+<h2>Select Brand</h2>
+<div class="brand-scroll-wrapper">
+    <div *ngFor="let brand of brands">
+        <button mat-button (click)="selectBrand(brand)" class="brand-button">
+            {{ brand.brandName }}
+        </button>
+    </div>
+</div>
